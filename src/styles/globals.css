@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 142.1 76.2% 36.3%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 37.7 96% 52.7%;
+    --accent-foreground: 26 83.3% 14.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* Natural State Brand Colors */
+    --color-natural-state-primary: #4E54C7;
+    --color-natural-state-secondary: #AF5C34;
+    --color-natural-state-warm: #F4F3F1;
+    --color-natural-state-text: #000000;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-900 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-lg border bg-white p-6 shadow-sm;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600;
+  }
+
+  .btn-outline {
+    @apply btn border border-neutral-300 bg-white hover:bg-neutral-50;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary-100 text-secondary-700;
+  }
+
+  .chart-container {
+    @apply w-full overflow-hidden rounded-lg bg-white p-6 shadow-sm;
+  }
+
+  .chart-title {
+    @apply mb-4 text-xl font-bold text-neutral-900;
+  }
+
+  .chart-description {
+    @apply mb-4 text-sm text-neutral-600;
+  }
+
+  .stat-card {
+    @apply rounded-lg border bg-white p-6 shadow-sm;
+  }
+
+  .stat-label {
+    @apply text-sm font-medium text-neutral-600;
+  }
+
+  .stat-value {
+    @apply mt-2 text-3xl font-bold text-neutral-900;
+  }
+
+  .filter-button {
+    @apply rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm font-medium hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+
+  .filter-button-active {
+    @apply rounded-md border border-primary-500 bg-primary-50 px-3 py-2 text-sm font-medium text-primary-700 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-neutral-300 hover:bg-neutral-400;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-break-before {
+    page-break-before: always;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid;
+  }
+}
