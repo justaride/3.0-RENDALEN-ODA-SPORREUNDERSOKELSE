@@ -7,7 +7,7 @@ import type { SurveyData, Response } from '../types/survey';
  * @returns {SurveyData} The complete survey data
  */
 export function loadSurveyData(): SurveyData {
-  return surveyDataRaw as SurveyData;
+  return surveyDataRaw as unknown as SurveyData;
 }
 
 /**
