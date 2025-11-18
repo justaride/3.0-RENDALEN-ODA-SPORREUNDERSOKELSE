@@ -60,7 +60,7 @@ export default function Home() {
       href: '/okonomi',
       icon: '💰',
       stats: [
-        { label: 'Med kjøpekraft', value: `${responses.length - (countSingleChoice(responses.map(r => r.data.okonomi.dersom_du_skulle_kjøpe_bolig_hva_er_din_anslatte_maksimale_kjopesumbyggekostnad))['Vet ikke'] || 0)}` },
+        { label: 'Med kjøpekraft', value: `${responses.length - (countSingleChoice(responses.map(r => r.data.okonomi.dersom_du_skulle_kjøpe_bolig_hva_er_din_anslåtte_maksimale_kjøpesumbyggekostnad))['Vet ikke'] || 0)}` },
       ],
       color: 'from-yellow-500 to-yellow-700',
     },
