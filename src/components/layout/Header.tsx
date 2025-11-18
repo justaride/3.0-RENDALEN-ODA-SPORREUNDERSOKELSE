@@ -5,12 +5,12 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navigation = [
-  { name: 'Oversikt', href: '/', icon: '📊' },
-  { name: 'Demografi', href: '/demografi', icon: '👥' },
-  { name: 'Bolig', href: '/bolig', icon: '🏠' },
-  { name: 'Økonomi', href: '/okonomi', icon: '💰' },
-  { name: 'Flytting', href: '/flytting', icon: '🚚' },
-  { name: 'Innspill', href: '/innspill', icon: '💬' },
+  { name: 'Oversikt', href: '/' },
+  { name: 'Demografi', href: '/demografi' },
+  { name: 'Bolig', href: '/bolig' },
+  { name: 'Økonomi', href: '/okonomi' },
+  { name: 'Flytting', href: '/flytting' },
+  { name: 'Innspill', href: '/innspill' },
 ];
 
 export function Header() {
@@ -24,7 +24,6 @@ export function Header() {
           {/* Logo/Title */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="text-2xl">🏔️</div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">
                   Rendalen
@@ -43,8 +42,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={`
-                    px-3 py-2 rounded-lg text-sm font-medium transition-colors
-                    flex items-center space-x-2
+                    px-4 py-2 rounded-lg text-sm font-medium transition-colors
                     ${
                       isActive
                         ? 'bg-primary text-white'
@@ -52,8 +50,7 @@ export function Header() {
                     }
                   `}
                 >
-                  <span>{item.icon}</span>
-                  <span>{item.name}</span>
+                  {item.name}
                 </Link>
               );
             })}
@@ -62,10 +59,11 @@ export function Header() {
           {/* Natural State Badge - Only on larger screens */}
           <div className="hidden xl:flex items-center gap-2 text-xs text-gray-600">
             <span className="font-medium">Powered by</span>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white border border-gray-200">
-              <div className="w-5 h-5 rounded-full" style={{ backgroundColor: '#4E54C7' }}></div>
-              <span className="font-semibold" style={{ color: '#4E54C7' }}>Natural State</span>
-            </div>
+            <img
+              src="/images/natural-state/logo-black.png"
+              alt="Natural State"
+              className="h-6"
+            />
           </div>
 
           {/* Mobile menu button */}
@@ -119,8 +117,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={`
-                    block px-3 py-2 rounded-md text-base font-medium
-                    flex items-center space-x-2
+                    block px-4 py-2 rounded-md text-base font-medium
                     ${
                       isActive
                         ? 'bg-primary text-white'
@@ -129,8 +126,7 @@ export function Header() {
                   `}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span>{item.icon}</span>
-                  <span>{item.name}</span>
+                  {item.name}
                 </Link>
               );
             })}

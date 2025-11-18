@@ -36,7 +36,6 @@ export default function Home() {
       title: 'Demografi',
       description: 'Alder, kjønn, husstand og livssituasjon',
       href: '/demografi',
-      icon: '👥',
       stats: [
         { label: 'Respondenter', value: totalResponses },
         { label: 'Aldersgrupper', value: '7' },
@@ -47,7 +46,6 @@ export default function Home() {
       title: 'Boligsituasjon',
       description: 'Nåværende bolig og områdekvalitet',
       href: '/bolig',
-      icon: '🏠',
       stats: [
         { label: 'Eier bolig', value: `${Math.round((ownersCount / totalResponses) * 100)}%` },
         { label: 'Fornøyde', value: `${Math.round((satisfiedCount / totalResponses) * 100)}%` },
@@ -58,7 +56,6 @@ export default function Home() {
       title: 'Økonomi',
       description: 'Kjøpekraft og støtteordninger',
       href: '/okonomi',
-      icon: '💰',
       stats: [
         { label: 'Med kjøpekraft', value: `${responses.length - (countSingleChoice(responses.map(r => r.data.okonomi.dersom_du_skulle_kjøpe_bolig_hva_er_din_anslåtte_maksimale_kjøpesumbyggekostnad))['Vet ikke'] || 0)}` },
       ],
@@ -68,7 +65,6 @@ export default function Home() {
       title: 'Flytteplaner',
       description: 'Flytteintensjon og boligpreferanser',
       href: '/flytting',
-      icon: '🚚',
       stats: [
         { label: 'Planlegger å flytte', value: `${Math.round((planningToMoveCount / totalResponses) * 100)}%` },
       ],
@@ -84,7 +80,6 @@ export default function Home() {
           {/* Left: Project Info */}
           <div className="p-8 lg:p-12">
             <div className="mb-6">
-              <div className="text-5xl mb-4">🏔️</div>
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 Rendalen Boligbehovsundersøkelse
               </h1>
@@ -93,11 +88,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 mb-8 text-sm text-gray-600">
-              <div className="w-6 h-6 rounded-full" style={{ backgroundColor: '#4E54C7' }}></div>
-              <span className="font-semibold" style={{ color: '#4E54C7' }}>Natural State</span>
-              <span className="text-gray-400">·</span>
-              <span>Place development · Sustainable economics</span>
+            <div className="flex items-center gap-3 mb-8">
+              <img
+                src="/images/natural-state/logo-black.png"
+                alt="Natural State"
+                className="h-8"
+              />
+              <span className="text-sm text-gray-400">·</span>
+              <span className="text-sm text-gray-600">Place development · Sustainable economics</span>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -165,7 +163,11 @@ export default function Home() {
                 {Math.round((ownersCount / totalResponses) * 100)}%
               </p>
             </div>
-            <div className="text-4xl">🏡</div>
+            <img
+              src="/images/natural-state/sphere-nature.png"
+              alt="Nature"
+              className="w-12 h-12 opacity-80"
+            />
           </div>
         </div>
         <div className="bg-white rounded-lg shadow p-6 border-t-4" style={{ borderColor: '#4E54C7' }}>
@@ -176,7 +178,11 @@ export default function Home() {
                 {Math.round((satisfiedCount / totalResponses) * 100)}%
               </p>
             </div>
-            <div className="text-4xl">😊</div>
+            <img
+              src="/images/natural-state/sphere-human.png"
+              alt="Human"
+              className="w-12 h-12 opacity-80"
+            />
           </div>
         </div>
         <div className="bg-white rounded-lg shadow p-6 border-t-4" style={{ borderColor: '#AF5C34' }}>
@@ -187,7 +193,11 @@ export default function Home() {
                 {Math.round((planningToMoveCount / totalResponses) * 100)}%
               </p>
             </div>
-            <div className="text-4xl">📦</div>
+            <img
+              src="/images/natural-state/sphere-society.png"
+              alt="Society"
+              className="w-12 h-12 opacity-80"
+            />
           </div>
         </div>
       </div>
@@ -206,7 +216,6 @@ export default function Home() {
             >
               <div className={`bg-gradient-to-br ${category.color} p-6 text-white`}>
                 <div className="flex items-start justify-between mb-4">
-                  <div className="text-5xl opacity-90">{category.icon}</div>
                   <svg
                     className="w-6 h-6 transform group-hover:translate-x-1 transition-transform"
                     fill="none"

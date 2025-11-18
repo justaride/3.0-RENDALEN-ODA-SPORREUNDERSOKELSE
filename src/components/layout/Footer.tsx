@@ -6,10 +6,11 @@ export function Footer() {
 
           {/* Natural State Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full" style={{ backgroundColor: '#4E54C7' }}></div>
-              <span className="text-xl font-bold" style={{ color: '#4E54C7' }}>Natural State</span>
-            </div>
+            <img
+              src="/images/natural-state/logo-stacked.png"
+              alt="Natural State"
+              className="h-16 mb-4"
+            />
             <p className="text-sm text-gray-600 mb-4">
               Natural State is a strategy agency specialising in place development and sustainable economics.
             </p>
