@@ -125,25 +125,12 @@ export default function Home() {
             </h3>
 
             {/* Methodology visualization */}
-            <div className="relative flex items-center justify-center mb-6" style={{ height: '280px' }}>
-              <svg viewBox="0 0 400 400" className="w-full h-full">
-                {/* Market sphere (outer circle) */}
-                <circle cx="200" cy="200" r="160" fill="none" stroke="#4E54C7" strokeWidth="2" opacity="0.5" />
-                <text x="200" y="50" textAnchor="middle" fontSize="16" fill="#4E54C7" fontWeight="600">Market sphere</text>
-
-                {/* Inner circles - overlapping */}
-                {/* Human (top) */}
-                <circle cx="200" cy="160" r="55" fill="#AF5C34" fillOpacity="0.1" stroke="#AF5C34" strokeWidth="2" />
-                <text x="200" y="165" textAnchor="middle" fontSize="14" fill="#AF5C34" fontWeight="600">Human</text>
-
-                {/* Society (bottom left) */}
-                <circle cx="165" cy="220" r="55" fill="#AF5C34" fillOpacity="0.1" stroke="#AF5C34" strokeWidth="2" />
-                <text x="165" y="225" textAnchor="middle" fontSize="14" fill="#AF5C34" fontWeight="600">Society</text>
-
-                {/* Nature (bottom right) */}
-                <circle cx="235" cy="220" r="55" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="2" />
-                <text x="235" y="225" textAnchor="middle" fontSize="14" fill="#10b981" fontWeight="600">Nature</text>
-              </svg>
+            <div className="relative flex items-center justify-center mb-6">
+              <img
+                src="/images/natural-state/market-sphere-methodology.png"
+                alt="Natural State Market Sphere Methodology"
+                className="w-full max-w-md mx-auto"
+              />
             </div>
 
             <p className="text-sm text-gray-600 text-center">
