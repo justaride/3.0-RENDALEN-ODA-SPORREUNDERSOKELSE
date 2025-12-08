@@ -6,7 +6,9 @@
     "dev": "node ./node_modules/next/dist/bin/next dev",
     "build": "node ./node_modules/next/dist/bin/next build",
     "start": "node ./node_modules/next/dist/bin/next start",
-    "lint": "node ./node_modules/next/dist/bin/next lint"
+    "lint": "node ./node_modules/next/dist/bin/next lint",
+    "validate": "npx tsx scripts/validate-data.ts",
+    "prebuild": "npm run validate || echo 'Validation warnings - continuing build'"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +33,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.22",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.18"
+    "tailwindcss": "^3.4.18",
+    "tsx": "^4.21.0"
   }
 }

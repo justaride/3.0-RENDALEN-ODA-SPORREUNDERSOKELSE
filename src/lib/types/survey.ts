@@ -233,10 +233,24 @@ export const AGE_ORDER = [
 ] as const;
 
 export const LOCATION_ORDER = [
+  // Hovedsteder i Rendalen
   'Bergset',
   'Hanestad',
   'Otnes',
   'Åkrestrømmen',
+  // Andre steder
+  'Hornset',
+  'Lomnessjøen øst',
+  'Elvål',
+  'Åkre',
+  'Sjølisand',
+  'Finstad',
+  'Unsetbrenna',  // Real place name in Rendalen!
+  'Fiskviklia',
+  'Midtskogen',
+  // Samlekategorier
   'Annet sted i Øvre Rendal',
-  'Annet sted i Ytre Rendal'
+  'Annet sted i Ytre Rendal',
+  // Ikke bosatt i Rendalen
+  'Jeg bor ikke i Rendalen i dag'
 ] as const;
