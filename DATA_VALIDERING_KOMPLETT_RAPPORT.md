@@ -493,5 +493,41 @@ Alle data fra `Boligbehovsundersøkelse (1-1015) Oda rev.xlsx` er korrekt ekstra
 ---
 
 **Rapport generert:** 18. november 2025, 23:15
-**Analysert av:** Claude Code (Sonnet 4.5)
-**Versjon:** 2.0.0
+**Sist oppdatert:** 8. desember 2025
+**Analysert av:** Claude Code
+**Versjon:** 2.1.0
+
+---
+
+## Vedlegg B: Kritisk Feilretting (8. desember 2025)
+
+### LOCATION_ORDER utvidet fra 6 til 16 lokasjoner
+
+**Problem:** Områdefilteret viste kun 6 lokasjoner, mens data inneholdt 16.
+**Konsekvens:** 219 av 610 respondenter var ikke synlige i filteret.
+**Løsning:** Oppdatert LOCATION_ORDER til alle 16 kategorier.
+
+**Før (feil):**
+```typescript
+export const LOCATION_ORDER = [
+  'Bergset',
+  'Hanestad',
+  'Otnes',
+  'Åkrestrømmen',
+  'Annet sted i Øvre Rendal',
+  'Annet sted i Ytre Rendal'
+] as const;
+```
+
+**Etter (riktig):**
+```typescript
+export const LOCATION_ORDER = [
+  'Bergset', 'Hanestad', 'Otnes', 'Åkrestrømmen',
+  'Hornset', 'Lomnessjøen øst', 'Elvål', 'Åkre',
+  'Sjølisand', 'Finstad', 'Unsetbrenna', 'Fiskviklia',
+  'Midtskogen', 'Annet sted i Øvre Rendal',
+  'Annet sted i Ytre Rendal', 'Jeg bor ikke i Rendalen i dag'
+] as const;
+```
+
+**Verifisering:** Deployed versjon bekreftet med "16 kategorier" i filter.

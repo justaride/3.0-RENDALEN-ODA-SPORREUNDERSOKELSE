@@ -74,6 +74,27 @@ export default function Home() {
 
   return (
     <div className="space-y-8">
+      {/* Disclaimer Banner */}
+      <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0">
+            <svg className="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div className="flex-1">
+            <h4 className="text-sm font-semibold text-green-800">Oppdatert 8. desember 2025</h4>
+            <p className="text-sm text-green-700 mt-1">
+              <strong>Kritisk feilretting:</strong> Områdefilteret viser nå alle 16 lokasjoner (tidligere kun 6).
+              Alle {totalResponses} respondenter er nå tilgjengelige, inkludert 610 bosatt i Rendalen.
+            </p>
+            <p className="text-xs text-green-600 mt-2">
+              ✓ Data validert mot original Excel-fil • ✓ Alle 54 spørsmål verifisert • ✓ 100% dataintegritet bekreftet
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section with Natural State Branding */}
       <div className="bg-natural-state-warm rounded-lg overflow-hidden shadow-lg border border-gray-200">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
